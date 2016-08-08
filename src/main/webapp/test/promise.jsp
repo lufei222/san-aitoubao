@@ -13,7 +13,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content="openapi"/>
     <script type="text/javascript" src="../test/js/jquery-3.1.0.min.js"></script>
-    <script type="text/javascript" src="../test/js/promise1.js"></script>
+    <script type="text/javascript" src="../test/js/promise.js"></script>
+    <!--修改浏览器的地址栏地址-->
+    <script type="text/javascript" src="../test/js/jsreplaceUrl.js"></script>
 
 </head>
 <p>测试javascript的promise</p>
@@ -41,3 +43,22 @@
         document.getElementById("radio1").checked=false
     }
 </script>--%>
+<script language="javascript">
+    var strWindowFeatures = "menubar=no,location=no,resizable=no,scrollbars=no,status=no,width=200,height=200";
+    var nome='nameofme';
+    function vamos(url1){
+        win = window.open(url1,nome,strWindowFeatures);
+        win.focus();
+        // If the window opened successfully (e.g: not blocked)
+        if (win) {
+            win.onload = function() {//onload can be blocked by the brower
+                win.location.href='http://www.bing.com';
+            };
+        }
+        setTimeout("win.location.href='http://www.bing.com'",4000);//change the href after 4 second
+        win.focus();
+        window.history.replaceState('Object', 'Title', '?http://www.bing.com');
+        setTimeout("window.history.replaceState('Object', 'Title', '?http://www.fava.com')",4000);//after 4 sec
+    }
+</script>
+<button id="dd" onClick="vamos('http://www.google.com')">but</button>
