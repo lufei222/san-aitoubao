@@ -3,7 +3,7 @@
 项目来源于大学时期的P2P投资需求以及当年的毕业设计
 在当年毕业设计答辩时候答应的开源于继续推进本项目2.0版本的开发，
 于是从OSgit私库迁移到github，并去除毕设时期的P2P各大业务模块，仅留下日常测试使用的一个报销单模块
----
+
 二期展望：高并发秒杀、dubbo、reactjs、es6、nodejs、爬虫获取投标、监听赚客吧羊毛于消息提醒业务模快增删查改集成自动生成工具
 
 ##开发工具：idea2014
@@ -21,6 +21,7 @@ http://localhost:8080/aitouwang/index.do进入爱投宝投标网站
 3、在cmd中输入node http.js启动脚本
 4、浏览器直接运行网站首页
 http://localhost:3000/aitouwang/index.html
+
 
 Excample：
 用于普通的测试：参考项目仅存的报销单模块
