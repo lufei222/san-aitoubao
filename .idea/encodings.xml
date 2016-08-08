@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/aitouwang/js/layer.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/aitouwang/js/skin/default" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/aitouwang/js/skin/layer.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/aitouwang/login/images/login_bg_0.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/common/images/jenkins.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/project/common/js/projectList.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/project/projectInfo.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/project/projectList.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/welcome/common/js/outlook2.js" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

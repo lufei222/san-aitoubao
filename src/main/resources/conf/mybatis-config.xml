@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--<configuration>
+    &lt;!&ndash; 命名空间 &ndash;&gt;
+    <typeAliases>
+    </typeAliases>
+
+    &lt;!&ndash; 批量加载mapper(推荐使用)映射map &ndash;&gt;
+    <mappers>
+        <package name="project.dao.ProjectDao"/>
+        <package name="hrm.dao.DeptDao"/>
+        <package name="hrm.dao.EmployeeDao"/>
+
+    </mappers>
+
+</configuration>-->
+
+<configuration>
+
+<settings>
+    <setting name="mapUnderscoreToCamelCase" value="true"/>
+</settings>
+<!--<typeHandlers>-->
+<!--<typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="org.ucform.enumitem.GenderEnum/>-->
+<!--</typeHandlers>-->
+</configuration>

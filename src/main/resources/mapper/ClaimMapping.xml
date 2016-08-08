@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="claim.dao.ClaimDao">
+
+    <!--表名 -->
+    <sql id="table_name">claim</sql>
+
+    <sql id="select_fields">
+        code,claims_type, applicant_id, applicant,app_date,state_code,
+        filler_name,filler_id,proof,project_id,start_date,edit_date,
+        end_date,remark
+    </sql>
+    <resultMap id="entityMap" type="claim.domain.Claim">
+        <result column="code" property="code"/>
+        <result column="claims_type" property="claimsType"/>
+        <result column="applicant_id" property="applicantId"/>
+        <result column="applicant" property="applicant"/>
+        <result column="app_date" property="appDate"/>
+        <result column="state_code" property="stateCode"/>
+        <result column="filler_name" property="fillerName"/>
+        <result column="filler_id" property="fillerId"/>
+        <result column="proof" property="proof"/>
+        <result column="project_id" property="projectId"/>
+        <result column="start_date" property="startDate"/>
+        <result column="edit_date" property="editDate"/>
+        <result column="end_date" property="endDate"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+
+    <sql id="select_where">
+        <where>
+            1=1
+
+            <if test="condition!=null and condition.code != null">
+                AND a.code = #{condition.code}
+            </if>
+            <if test="condition!=null and condition.claimsType !=0">
+                AND a.claims_type = #{condition.claimsType}
+            </if>
+            <if test="condition!=null and condition.applicant != null ">
+                AND a.applicant = #{condition.applicant}
+            </if>
+            <if test="condition!=null and condition.applicantId != 0 ">
+                AND a.applicant_id = #{condition.applicantId}
+            </if>
+            <if test="condition!=null and condition.appDate != null ">
+                AND a.app_date like concat('%' , #{condition.appDate} , '%')
+            </if>
+            <if test="condition!=null and condition.stateCode != null ">
+                AND a.state_code = #{condition.stateCode}
+            </if>
+            <if test="condition!=null and condition.fillerName != null ">
+                AND a.filler_name like concat('%' , #{condition.fillerName} , '%')
+            </if>
+            <if test="condition!=null and condition.fillerId != 0 ">
+                AND a.filler_id = #{condition.fillerId}
+            </if>
+            <if test="condition!=null and condition.projectId != 0">
+                AND a.project_id = #{condition.projectId}
+            </if>
+            <if test="condition!=null and condition.startDate != null">
+                <![CDATA[ AND a.start_date >= #{condition.startDate}]]>
+            </if>
+            <if test="condition!=null and condition.startDate2 != null">
+                <![CDATA[ AND a.start_date < #{condition.startDate2}]]>
+            </if>
+            <if test="condition!=null and condition.editDate != null">
+                <![CDATA[ AND a.edit_date >= #{condition.editDate}]]>
+            </if>
+            <if test="condition!=null and condition.remark != null ">
+                AND a.remark like concat('%' , #{condition.remark} , '%')
+            </if>
+        </where>
+    </sql>
+
+
+    <!--查询单条-->
+    <select id="selectEntityById" resultMap="entityMap" parameterType="Integer">
+        SELECT * from
+        <include refid="table_name"></include>
+        where id=#{id}#
+    </select>
+
+    <!-- 查全部 -->
+    <select id="selectAllEntities" resultType="claim.domain.Claim" parameterType="map">
+        SELECT * FROM
+        <include refid="table_name"></include>
+        a
+        <!--<include refid="select_where"></include>-->
+        ORDER BY a.edit_date DESC
+    </select>
+    <!-- 分页查询 -->
+    <select id="selectEntities" resultType="claim.domain.Claim" parameterType="map">
+        SELECT
+        a.id,a.code,a.claims_type,a.applicant_id,a.applicant,a.app_date,a.state_code,a.filler_name,a.filler_id,a.proof,a.project_id,a.start_date,a.edit_date,
+        a.end_date,remark
+        FROM
+        <include refid="table_name"></include>
+        a
+        <include refid="select_where"></include>
+        ORDER BY a.edit_date DESC
+        <if test="start!=null and limit!=null">
+            limit #{start} , #{limit}
+        </if>
+    </select>
+    <!-- 查总记录数 -->
+    <select id="selectEntitiesCount" resultType="int" parameterType="map">
+        SELECT count(*) FROM
+        <include refid="table_name"></include>
+        a
+        <include refid="select_where"></include>
+    </select>
+
+
+    <!--新增-->
+    <insert id="insertEntity" parameterType="claim.domain.Claim" keyColumn="claims_id" useGeneratedKeys="true"
+            keyProperty="claims_id">
+        INSERT INTO
+        <include refid="table_name"></include>
+        (
+        <include refid="select_fields"/>
+        )
+        VALUES
+        (#{code},#{claimsType},#{applicantId},#{applicant},#{appDate},#{stateCode},
+        #{fillerName},#{fillerId},#{proof},#{projectId},#{startDate},#{editDate},
+        #{endDate},#{remark}
+        )
+    </insert>
+
+    <!--更新-->
+    <update id="updateEntity" parameterType="claim.domain.Claim">
+        update
+        <include refid="table_name"></include>
+        <set>
+            <if test="code !=null">
+                code = #{code},
+            </if>
+            <if test="claimsType !=null">
+                claims_type = #{claimsType},
+            </if>
+            <if test="applicantId !=null">
+                applicant_id = #{applicantId},
+            </if>
+            <if test="applicant !=null">
+                applicant = #{applicant},
+            </if>
+            <if test="appDate !=null">
+                app_date = #{appDate},
+            </if>
+            <if test="stateCode !=null">
+                state_code = #{stateCode},
+            </if>
+            <if test="fillerName !=null">
+                filler_name = #{fillerName},
+            </if>
+            <if test="fillerId !=null">
+                filler_id = #{fillerId},
+            </if>
+            <if test="proof !=null">
+                proof = #{proof},
+            </if>
+            <if test="projectId !=null">
+                project_id = #{projectId},
+            </if>
+            <if test="startDate !=null">
+                start_date = #{startDate},
+            </if>
+
+            <if test="editDate !=null">
+                edit_date = #{editDate},
+            </if>
+
+            <if test="endDate !=null">
+                end_date = #{endDate},
+            </if>
+
+            <if test="remark !=null">
+                remark = #{remark},
+            </if>
+        </set>
+        where id =#{id}
+    </update>
+
+    <!--删除-->
+    <delete id="deleteEntity" parameterType="Integer">
+        delete from
+        <include refid="table_name"></include>
+        where id = #{id}
+    </delete>
+</mapper>

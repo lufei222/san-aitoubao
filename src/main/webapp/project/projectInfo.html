@@ -1,0 +1,104 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.4/demo/demo.css">
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.4/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.4/themes/color.css">
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.4.4/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="project/common/css/projectList.css">
+    <script type="text/javascript" src="jquery-easyui-1.4.4/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-easyui-1.4.4/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="project/common/js/projectList3.js"></script>
+
+</head>
+<body>
+<table id="dg" title="椤圭洰璇︾粏" class="easyui-datagrid" style="width:100%;height:100%"
+       url="/project/select.do"
+       toolbar="#toolbar" pagination="true"
+       rownumbers="true" fitColumns="true" singleSelect="true" loading="false" loaded="none" sort="state">
+    <thead>
+    <tr>
+        <th field="id" width="50">First Name</th>
+        <th field="nickname" width="50">Last Name</th>
+        <th field="state" width="50">Phone</th>
+        <th field="email" width="50">Email</th>
+        <th field="email" width="50">Email</th>
+        <th field="email" width="50">Email</th>
+        <th field="email" width="50">Email</th>
+        <th field="email" width="50">Email</th>
+        <th field="email" width="50">Email</th>
+        <th field="email" width="50">Email</th>
+        <th field="email" width="50">Email</th>
+    </tr>
+    </thead>
+</table>
+<div id="toolbar">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newUser()">New
+        User</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">Edit
+        User</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Remove
+        User</a>
+</div>
+
+<div id="dlg" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
+     closed="true" buttons="#dlg-buttons">
+    <div class="ftitle">User Information</div>
+    <form id="fm" method="post" novalidate>
+        <div class="fitem">
+            <label>First Name:</label>
+            <input name="firstname" class="easyui-textbox" required="true">
+        </div>
+        <div class="fitem">
+            <label>Last Name:</label>
+            <input name="lastname" class="easyui-textbox" required="true">
+        </div>
+        <div class="fitem">
+            <label>Phone:</label>
+            <input name="phone2" class="easyui-textbox">
+        </div>
+        <div class="fitem">
+            <label>1:</label>
+            <input name="phone" class="easyui-textbox">
+        </div>
+        <div class="fitem">
+            <label>Phone2:</label>
+            <input name="phone3" class="easyui-textbox">
+        </div>
+        <div class="fitem">
+            <label>Phone3:</label>
+            <input name="phone" class="easyui-textbox">
+        </div>
+        <div class="fitem">
+            <label>Phone4:</label>
+            <input name="phone4" class="easyui-textbox">
+        </div>
+        <div class="fitem">
+            <label>Phone5:</label>
+            <input name="phone45" class="easyui-textbox">
+        </div>
+        <div class="fitem">
+            <label>Phone:</label>
+            <input name="phone5" class="easyui-textbox">
+        </div>
+        <div class="fitem">
+            <label>Phone6:</label>
+            <input name="phone6" class="easyui-textbox">
+        </div>
+        <div class="fitem">
+            <label>Phone7:</label>
+            <input name="phone7" class="easyui-textbox">
+        </div>
+    </form>
+</div>
+<div id="dlg-buttons">
+    <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Save</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel"
+       onclick="javascript:$('#dlg').dialog('close')" style="width:90px">Cancel</a>
+</div>
+
+
+</body>
+</html>
