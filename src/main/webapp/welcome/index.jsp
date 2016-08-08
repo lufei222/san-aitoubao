@@ -39,7 +39,6 @@
 	<div id="tabs" class="easyui-tabs"  fit="true" border="false" >
 		<div title="欢迎使用" style="padding:20px;overflow:hidden;" id="home">
 
-			<%--<h1  style="color: #000;font-size:30px">爱投宝后台运营系统</h1>--%>
 				<h1  style="color: #000;font-size:30px">爱投宝后台管理</h1>
 
 		</div>

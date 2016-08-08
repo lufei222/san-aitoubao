@@ -14,7 +14,7 @@ var _menus = {
         "icon": "icon-sys",
         "menuname": "系统管理",
         "menus": [{
-            "menuname": "项目管理",
+            "menuname": "投标管理",
             "icon": "icon-nav",
             "url": "/project/index.do"
         },
@@ -95,14 +95,14 @@ var _menus = {
         {
             "menuid": "39",
             "icon": "icon-sys",
-            "menuname": "CRM管理",
+            "menuname": "交易管理",
             "menus": [{
-                "menuname": "客户列表",
+                "menuname": "交易记录列表",
                 "icon": "icon-nav",
                 "url": "/customer/index.do"
             },
                 {
-                    "menuname": "客户交易额量图",
+                    "menuname": "交易额量图",
                     "icon": "icon-nav",
                     "url": "/shop/productcatagory.aspx"
                 },
